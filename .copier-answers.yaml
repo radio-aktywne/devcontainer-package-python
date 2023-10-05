@@ -1,0 +1,14 @@
+---
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 0.2.1
+_src_path: gh:radio-aktywne/template-devcontainer
+accountname: radio-aktywne
+description: Devcontainer for Python packages 🐍
+devcontainername: package-python
+docs: true
+docsurl: https://radio-aktywne.github.io/devcontainer-package-python
+imagename: devcontainers/package-python
+registry: true
+releases: true
+reponame: devcontainer-package-python
+repourl: https://github.com/radio-aktywne/devcontainer-package-python
