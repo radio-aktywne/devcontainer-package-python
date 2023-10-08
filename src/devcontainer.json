@@ -6,26 +6,45 @@
     // Docker context to use, relative to this file
     "context": "image"
   },
+  // Volumes
+  "mounts": [
+    // Mount secrets (shared)
+    "source=devcontainer-shared-secrets,target=/secrets,type=volume",
+    // Mount nix store (not shared)
+    "source=devcontainer-${devcontainerId}-nix,target=/nix,type=volume",
+    // Mount shell history (not shared)
+    "source=devcontainer-${devcontainerId}-shellhistory-state,target=/persist/shellhistory,type=volume",
+    // Mount trunk cache (shared)
+    "source=devcontainer-shared-trunk-cache,target=/cache/trunk,type=volume",
+    // Mount npm cache (shared)
+    "source=devcontainer-shared-npm-cache,target=/cache/npm,type=volume",
+    // Mount poetry cache (shared)
+    "source=devcontainer-shared-poetry-cache,target=/cache/poetry,type=volume"
+  ],
+  // Environment variables
+  "remoteEnv": {
+    // Set workspace path
+    "WORKSPACE": "${containerWorkspaceFolder}"
+  },
   // Run arguments
   "runArgs": [
+    // Use host PID namespace
+    "--pid=host",
+    // Use host UTS namespace
+    "--uts=host",
+    // Use host IPC
+    "--ipc=host",
     // Use host network
-    "--network=host"
+    "--network=host",
+    // Use host user namespace
+    "--userns=host",
+    // Use host cgroup namespace
+    "--cgroupns=host",
+    // Run with elevated privileges
+    "--privileged"
   ],
   // Run a command when the container is created
   "onCreateCommand": "/hooks/create.sh",
-  // Volumes
-  "mounts": [
-    // Mount nix store (shared)
-    "source=devcontainer-${devcontainerId}-nix,target=/nix,type=volume",
-    // Mount shell history (not shared)
-    "source=devcontainer-${devcontainerId}-shellhistory,target=/shellhistory,type=volume",
-    // Mount trunk cache (shared)
-    "source=devcontainer-shared-trunk,target=/trunk,type=volume",
-    // Mount npm cache (shared)
-    "source=devcontainer-shared-npm,target=/npm,type=volume",
-    // Mount poetry cache (shared)
-    "source=devcontainer-shared-poetry,target=/poetry,type=volume"
-  ],
   // Extra features to install to the container
   "features": {
     // Install Nix

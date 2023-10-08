@@ -5,6 +5,8 @@
 # The version is pinned to ensure reproducibility
 FROM mcr.microsoft.com/devcontainers/base:1.0.9-ubuntu-22.04
 
+ENV REMOTE_USER=vscode
+
 # Setup script
 COPY setup.sh /tmp/setup.sh
 
