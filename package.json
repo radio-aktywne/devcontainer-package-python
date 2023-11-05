@@ -5,8 +5,8 @@
     "postupdate": "npm install --no-audit --no-fund",
     "dev": "devcontainer"
   },
-  "dependencies": {
-    "@devcontainers/cli": "^0.51.3",
-    "npm-check-updates": "^16.14.4"
+  "devDependencies": {
+    "@devcontainers/cli": "^0.52.0",
+    "npm-check-updates": "^16.14.0"
   }
 }
