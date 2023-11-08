@@ -26,23 +26,6 @@
     // Set workspace path
     "WORKSPACE": "${containerWorkspaceFolder}"
   },
-  // Run arguments
-  "runArgs": [
-    // Use host PID namespace
-    "--pid=host",
-    // Use host UTS namespace
-    "--uts=host",
-    // Use host IPC
-    "--ipc=host",
-    // Use host network
-    "--network=host",
-    // Use host user namespace
-    "--userns=host",
-    // Use host cgroup namespace
-    "--cgroupns=host",
-    // Run with elevated privileges
-    "--privileged"
-  ],
   // Run a command when the container is created
   "onCreateCommand": "/hooks/create.sh",
   // Extra features to install to the container
