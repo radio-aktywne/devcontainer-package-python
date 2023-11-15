@@ -14,4 +14,4 @@ RUN /tmp/setup.sh && \
     rm /tmp/setup.sh
 
 # Lifecycle hooks
-COPY hooks /hooks
+COPY hooks/ /hooks/

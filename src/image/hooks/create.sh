@@ -7,7 +7,7 @@ touch /persist/shellhistory/.zsh_history
 # Use GitHub token secret if it exists
 if [[ -s /secrets/.ghtoken && -r /secrets/.ghtoken ]]; then
 	token="$(cat /secrets/.ghtoken)"
-	confighome="${XDG_CONFIG_HOME:-${HOME}/.config}"
+	confighome="${XDG_CONFIG_HOME:-${HOME}/.config/}"
 
 	# Add GitHub token to Nix config
 	configfile="${confighome}/nix/nix.conf"

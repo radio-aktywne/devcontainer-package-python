@@ -26,17 +26,17 @@ eval "\$(starship init zsh)"
 EOF
 
 # Setup secrets directory
-mkdir -p /secrets
+mkdir -p /secrets/
 
-chown -R "${REMOTE_USER}:" /secrets
+chown -R "${REMOTE_USER}:" /secrets/
 
 # Setup shell history cache
-mkdir -p /persist/shellhistory
+mkdir -p /persist/shellhistory/
 
 touch /persist/shellhistory/.bash_history
 touch /persist/shellhistory/.zsh_history
 
-chown -R "${REMOTE_USER}:" /persist/shellhistory
+chown -R "${REMOTE_USER}:" /persist/shellhistory/
 
 cat <<EOF >>"${REMOTE_USER_HOME}/.bashrc"
 export HISTFILE=/persist/shellhistory/.bash_history
@@ -47,40 +47,40 @@ export HISTFILE=/persist/shellhistory/.zsh_history
 EOF
 
 # Setup trunk cache
-mkdir -p /cache/trunk
+mkdir -p /cache/trunk/
 
-chown -R "${REMOTE_USER}:" /cache/trunk
+chown -R "${REMOTE_USER}:" /cache/trunk/
 
 cat <<EOF >>"${REMOTE_USER_HOME}/.bashrc"
-export TRUNK_CACHE=/cache/trunk
+export TRUNK_CACHE=/cache/trunk/
 EOF
 
 cat <<EOF >>"${REMOTE_USER_HOME}/.zshrc"
-export TRUNK_CACHE=/cache/trunk
+export TRUNK_CACHE=/cache/trunk/
 EOF
 
 # Setup npm cache
-mkdir -p /cache/npm
+mkdir -p /cache/npm/
 
-chown -R "${REMOTE_USER}:" /cache/npm
+chown -R "${REMOTE_USER}:" /cache/npm/
 
 cat <<EOF >>"${REMOTE_USER_HOME}/.bashrc"
-export NPM_CONFIG_CACHE=/cache/npm
+export NPM_CONFIG_CACHE=/cache/npm/
 EOF
 
 cat <<EOF >>"${REMOTE_USER_HOME}/.zshrc"
-export NPM_CONFIG_CACHE=/cache/npm
+export NPM_CONFIG_CACHE=/cache/npm/
 EOF
 
 # Setup poetry cache
-mkdir -p /cache/poetry
+mkdir -p /cache/poetry/
 
-chown -R "${REMOTE_USER}:" /cache/poetry
+chown -R "${REMOTE_USER}:" /cache/poetry/
 
 cat <<EOF >>"${REMOTE_USER_HOME}/.bashrc"
-export POETRY_CACHE_DIR=/cache/poetry
+export POETRY_CACHE_DIR=/cache/poetry/
 EOF
 
 cat <<EOF >>"${REMOTE_USER_HOME}/.zshrc"
-export POETRY_CACHE_DIR=/cache/poetry
+export POETRY_CACHE_DIR=/cache/poetry/
 EOF
