@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
+      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     };
 
     flake-parts = {
@@ -74,7 +74,6 @@
 
             shellHook = ''
               export TMPDIR=/tmp
-              task install
             '';
           };
 
@@ -89,7 +88,6 @@
 
             shellHook = ''
               export TMPDIR=/tmp
-              task install
             '';
           };
 
