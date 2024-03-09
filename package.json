@@ -1,6 +1,5 @@
 {
   "name": "devcontainer",
-  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "devcontainer",
@@ -9,7 +8,7 @@
     "test": "npm run build"
   },
   "devDependencies": {
-    "@devcontainers/cli": "^0.54.2",
-    "npm-check-updates": "^16.14.11"
+    "@devcontainers/cli": "^0.57.0",
+    "npm-check-updates": "^16.14.15"
   }
 }
