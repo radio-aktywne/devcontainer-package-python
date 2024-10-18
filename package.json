@@ -5,7 +5,7 @@
     "dev": "devcontainer",
     "build": "devcontainer build --workspace-folder src/ --config src/devcontainer.json",
     "update": "ncu --peer --doctor --upgrade && npm i --no-audit --no-fund",
-    "test": "npm run build"
+    "test": "npm run -- build"
   },
   "devDependencies": {
     "@devcontainers/cli": "^0.57.0",

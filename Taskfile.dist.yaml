@@ -95,8 +95,8 @@ tasks:
       - >
         npm
         run
-        update
         --
+        update
         {{ .CLI_ARGS }}
   test-docs:
     desc: Test docs
@@ -106,8 +106,8 @@ tasks:
       - >
         npm
         run
-        test
         --
+        test
         {{ .CLI_ARGS }}
   docs:
     desc: Run docusaurus
@@ -118,8 +118,8 @@ tasks:
       - >
         npm
         run
-        docs
         --
+        docs
         {{ .CLI_ARGS | default "start --host 0.0.0.0" }}
   remove-node-modules:
     desc: Clean node_modules
@@ -170,8 +170,8 @@ tasks:
       - >
         npm
         run
-        update
         --
+        update
         {{ .CLI_ARGS }}
   dev:
     desc: Run devcontainer cli
@@ -181,8 +181,8 @@ tasks:
       - >
         npm
         run
-        dev
         --
+        dev
         {{ .CLI_ARGS }}
   build:
     desc: Build devcontainer image
@@ -191,6 +191,6 @@ tasks:
       - >
         npm
         run
-        build
         --
+        build
         {{ .CLI_ARGS }}
