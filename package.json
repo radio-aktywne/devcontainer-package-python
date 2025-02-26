@@ -8,7 +8,7 @@
     "test": "npm run -- build"
   },
   "devDependencies": {
-    "@devcontainers/cli": "^0.57.0",
-    "npm-check-updates": "^16.14.15"
+    "@devcontainers/cli": "^0.74.0",
+    "npm-check-updates": "^17.1.14"
   }
 }
