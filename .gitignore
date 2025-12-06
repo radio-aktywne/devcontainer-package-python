@@ -12,3 +12,6 @@
 
 # Dependencies
 /node_modules/
+
+# Debug
+*.log

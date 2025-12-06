@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-24.11";
+      url = "github:NixOS/nixpkgs/nixos-25.05";
     };
 
     flake-parts = {
@@ -35,12 +35,13 @@
         system,
         ...
       }: let
+        nix = pkgs.nix;
         node = pkgs.nodejs;
         nil = pkgs.nil;
         task = pkgs.go-task;
         coreutils = pkgs.coreutils;
         trunk = pkgs.trunk-io;
-        copier = pkgs.copier;
+        copier = pkgs.python313.withPackages (ps: [ps.copier]);
       in {
         # Override pkgs argument
         _module.args.pkgs = import inputs.nixpkgs {
@@ -64,6 +65,7 @@
             name = "dev";
 
             packages = [
+              nix
               node
               nil
               task
@@ -91,42 +93,14 @@
             '';
           };
 
-          template = pkgs.mkShell {
-            name = "template";
-
-            packages = [
-              task
-              coreutils
-              copier
-            ];
-
-            shellHook = ''
-              export TMPDIR=/tmp
-            '';
-          };
-
           lint = pkgs.mkShell {
             name = "lint";
 
             packages = [
-              node
+              nix
               task
               coreutils
               trunk
-            ];
-
-            shellHook = ''
-              export TMPDIR=/tmp
-            '';
-          };
-
-          docs = pkgs.mkShell {
-            name = "docs";
-
-            packages = [
-              node
-              task
-              coreutils
             ];
 
             shellHook = ''

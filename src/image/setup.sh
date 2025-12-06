@@ -59,6 +59,21 @@ cat <<EOF >>"${REMOTE_USER_HOME}/.zshrc"
 export TRUNK_CACHE=/cache/trunk/
 EOF
 
+# Setup uv cache
+mkdir --parents /cache/uv/
+
+chown --recursive "${REMOTE_USER}:" /cache/uv/
+
+cat <<EOF >>"${REMOTE_USER_HOME}/.bashrc"
+export UV_CACHE_DIR=/cache/uv/
+export UV_LINK_MODE=copy
+EOF
+
+cat <<EOF >>"${REMOTE_USER_HOME}/.zshrc"
+export UV_CACHE_DIR=/cache/uv/
+export UV_LINK_MODE=copy
+EOF
+
 # Setup npm cache
 mkdir --parents /cache/npm/
 
@@ -70,17 +85,4 @@ EOF
 
 cat <<EOF >>"${REMOTE_USER_HOME}/.zshrc"
 export NPM_CONFIG_CACHE=/cache/npm/
-EOF
-
-# Setup poetry cache
-mkdir --parents /cache/poetry/
-
-chown --recursive "${REMOTE_USER}:" /cache/poetry/
-
-cat <<EOF >>"${REMOTE_USER_HOME}/.bashrc"
-export POETRY_CACHE_DIR=/cache/poetry/
-EOF
-
-cat <<EOF >>"${REMOTE_USER_HOME}/.zshrc"
-export POETRY_CACHE_DIR=/cache/poetry/
 EOF
