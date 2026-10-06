@@ -2,16 +2,16 @@
   "name": "devcontainer",
   "private": true,
   "devDependencies": {
-    "@devcontainers/cli": "~0.80"
+    "@devcontainers/cli": "~0.89"
   },
   "devEngines": {
     "packageManager": {
       "name": "npm",
-      "version": "~10.9"
+      "version": "~11.19"
     },
     "runtime": {
       "name": "node",
-      "version": "~22.20"
+      "version": "~26.8"
     }
   }
 }
